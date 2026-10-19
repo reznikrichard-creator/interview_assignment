@@ -1,3 +1,5 @@
+'''''''''''''''''''Open Library — UI, API & Integration Test Automation Framework'''''''''''''''''''
+
 # Create virtual environment
 python3 -m venv .venv
 

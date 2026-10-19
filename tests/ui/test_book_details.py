@@ -1,3 +1,8 @@
+# Test is blocked due to human verification requirment after clicking on first result
+
+
+
+
 # from tests.ui.steps import search_for_books, save_results
 # def test_book_details(page, home, product_details):
 #     # 1. Search for The Hobbit
@@ -20,4 +25,3 @@
 #     assert search_title == details_title
 
 
-# Test is blocked due to human verification requirment after clicking on first result
