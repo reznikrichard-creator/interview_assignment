@@ -13,23 +13,26 @@ def test_api_ui_title_match(search_api, home):
     api_books = response.json()["docs"]
 
 
-    # 2. Collect the first 5 API titles
+    # 2. Collect the first 5 API titles and store them in api_titles
     api_titles = [
         book["title"]
         for book in api_books[:5]
         if book.get("title")
     ]
+    # print("\nAPI Titles:", api_titles)
 
     # 3. Search using the UI
     search_for_books(home, "The Hobbit")
     home.search_rows.first.wait_for(state="visible")
 
-    # 4. Collect up to 5 UI titles
+    # 4. Collect up to 5 UI titles and store them in ui_titles
     ui_titles = []
 
     for i in range(min(home.search_rows.count(), 5)):
         title = home.title.nth(i).inner_text()
         ui_titles.append(title)
+
+    # print("\nUI Titles:", ui_titles)
 
     # 5. Compare normalized API and UI titles
     verify_api_title_in_ui(api_titles, ui_titles)
