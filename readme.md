@@ -1,12 +1,26 @@
-FrameWork Dependencies
+# Create virtual environment
+python3 -m venv .venv
 
-Dependency	Purpose
-pytest	Test runner and assertions
-pytest-playwright	Browser automation fixtures
-pytest-html	HTML test reports
-pytest-xdist	Parallel test execution
-playwright	Browser automation engine, installed through pytest-playwright
+# Activate environment (Mac/Linux)
+source .venv/bin/activate
 
+# Install dependencies
+pip install -r requirements.txt
+
+# Install Playwright browser
+python -m playwright install chromium
+
+# Run all tests
+python -m pytest -v
+
+# Run API tests
+python -m pytest tests/api/ -v
+
+# Run UI tests
+python -m pytest tests/ui/ -v
+
+# Run integration tests
+python -m pytest tests/integration/ -v
 
 
 Integration Testing — Catalog and Ranking Variability
