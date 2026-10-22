@@ -14,5 +14,5 @@ class SearchAPI:
 
         return requests.get(
             f"{self.base_url}/search.json",
-            params=params
+            params
         )
